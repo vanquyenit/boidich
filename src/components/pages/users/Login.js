@@ -17,7 +17,7 @@ function Login()
 
     async function login() {
         let items = { email, password }
-        let result = await fetch("http://127.0.0.1:8000/api/login", {
+        let result = await fetch("http://127.0.0.1:8000/api/admin/login", {
             method: 'POST',
             body: JSON.stringify(items),
             headers: {
@@ -27,8 +27,10 @@ function Login()
         })
 
         result = await result.json()
+
+        console.log(result);
         if(result && result.status){
-            localStorage.setItem("user-info", JSON.stringify(result.response.data))
+            localStorage.setItem("user-info", JSON.stringify(result.data))
             history.push("/news-list")
         }
     }

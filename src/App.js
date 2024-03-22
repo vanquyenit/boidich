@@ -11,6 +11,8 @@ import News from './components/pages/news/index';
 import AddNews from './components/pages/news/Add';
 import EditNews from './components/pages/news/Edit';
 import Protected from './components/pages/Protected';
+import TuTru from './components/pages/tutru/index';
+import CreateQue from './components/pages/tutru/CreateQue';
 
 function App() {
   return (
@@ -22,8 +24,16 @@ function App() {
         <Route path="/register">
             <Register />
         </Route>
-        <Route path="/news-list">
-            {/* <AddNews /> */}
+        <Route path="/tu-tru">
+            {/* <TuTru /> */}
+            <Protected Cmp={TuTru} />
+        </Route>
+        <Route path="/tu-tru/que">
+            {/* <CreateQue /> */}
+            <Protected Cmp={CreateQue} />
+        </Route>
+        <Route path="/list-news">
+            {/* <News /> */}
             <Protected Cmp={News} />
         </Route>
         <Route path="/add-news">
